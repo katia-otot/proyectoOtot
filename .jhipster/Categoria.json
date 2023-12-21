@@ -1,0 +1,25 @@
+{
+  "changelogDate": "20231221174607",
+  "entityTableName": "categoria",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Categoria",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "producto",
+      "otherEntityRelationshipName": "categoria",
+      "relationshipName": "productos",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "no"
+}

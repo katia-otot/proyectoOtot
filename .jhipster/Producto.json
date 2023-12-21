@@ -1,0 +1,28 @@
+{
+  "changelogDate": "20231221162913",
+  "entityTableName": "producto",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "imagen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ingredientes",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Producto",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "no"
+}

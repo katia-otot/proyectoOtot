@@ -1,0 +1,25 @@
+{
+  "proyectoApp": {
+    "categoria": {
+      "home": {
+        "title": "Categorias",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Categoria",
+        "createOrEditLabel": "Créer ou éditer un Categoria",
+        "notFound": "Aucun Categoria trouvé"
+      },
+      "created": "Un nouveau Categoria a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Categoria avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Categoria avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Categoria {{ id }} ?"
+      },
+      "detail": {
+        "title": "Categoria"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "productos": "Productos"
+    }
+  }
+}
