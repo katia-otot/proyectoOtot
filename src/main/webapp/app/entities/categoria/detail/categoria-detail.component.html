@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <div *ngIf="categoria">
-      <h2 data-cy="categoriaDetailsHeading"><span jhiTranslate="proyectoApp.categoria.detail.title">Categoria</span></h2>
+      <h2 data-cy="categoriaDetailsHeading">
+        <span jhiTranslate="proyectoApp.categoria.detail.title">{{ categoria.nombre }}</span>
+      </h2>
 
       <hr />
 
@@ -10,21 +12,26 @@
       <jhi-alert></jhi-alert>
 
       <dl class="row-md jh-entity-details">
-        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <!-- <dt><span jhiTranslate="global.field.id">ID</span></dt>
         <dd>
-          <span>{{ categoria.id }}</span>
+         <span>{{ categoria.id }}</span>
         </dd>
         <dt><span jhiTranslate="proyectoApp.categoria.nombre">Nombre</span></dt>
         <dd>
           <span>{{ categoria.nombre }}</span>
-        </dd>
-        <dt><span jhiTranslate="proyectoApp.categoria.productos">Productos</span></dt>
-        <dd>
-          <span *ngFor="let productos of categoria.productos; let last = last">
-            <a [routerLink]="['/producto', productos.id, 'view']">{{ productos.nombre }}</a
-            >{{ last ? '' : ', ' }}
-          </span>
-        </dd>
+        </dd>-->
+        <table class="table table-striped" aria-describedby="page-heading">
+          <tr>
+            <dt><span jhiTranslate="proyectoApp.categoria.productos">Productos</span></dt>
+          </tr>
+          <dd>
+            <tr *ngFor="let productos of categoria.productos; let last = last">
+              <td>
+                <a [routerLink]="['/producto', productos.id, 'view']">{{ productos.nombre }}</a>
+              </td>
+            </tr>
+          </dd>
+        </table>
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

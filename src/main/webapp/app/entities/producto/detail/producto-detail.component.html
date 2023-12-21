@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <div *ngIf="producto">
-      <h2 data-cy="productoDetailsHeading"><span jhiTranslate="proyectoApp.producto.detail.title">Producto</span></h2>
+      <h2 data-cy="productoDetailsHeading">
+        <span jhiTranslate="proyectoApp.producto.detail.title">{{ producto.nombre }}</span>
+      </h2>
 
       <hr />
 
@@ -10,10 +12,10 @@
       <jhi-alert></jhi-alert>
 
       <dl class="row-md jh-entity-details">
-        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <!-- <dt><span jhiTranslate="global.field.id">ID</span></dt>
         <dd>
           <span>{{ producto.id }}</span>
-        </dd>
+        </dd>-->
         <dt><span jhiTranslate="proyectoApp.producto.nombre">Nombre</span></dt>
         <dd>
           <span>{{ producto.nombre }}</span>

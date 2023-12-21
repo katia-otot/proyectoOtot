@@ -32,12 +32,12 @@
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" jhiSortBy="id">
+          <!--<th scope="col" jhiSortBy="id">
             <div class="d-flex">
               <span jhiTranslate="global.field.id">ID</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
-          </th>
+          </th>-->
           <th scope="col" jhiSortBy="nombre">
             <div class="d-flex">
               <span jhiTranslate="proyectoApp.producto.nombre">Nombre</span>
@@ -67,9 +67,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let producto of productos; trackBy: trackId" data-cy="entityTable">
-          <td>
+          <!--<td>
             <a [routerLink]="['/producto', producto.id, 'view']">{{ producto.id }}</a>
-          </td>
+          </td>-->
           <td>{{ producto.nombre }}</td>
           <td>{{ producto.precio }}</td>
           <td>{{ producto.imagen }}</td>
