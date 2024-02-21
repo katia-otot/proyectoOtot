@@ -22,7 +22,7 @@ const productoRoute: Routes = [
     resolve: {
       producto: ProductoResolve,
     },
-    canActivate: [UserRouteAccessService],
+    //canActivate: [UserRouteAccessService],
   },
   {
     path: 'new',
