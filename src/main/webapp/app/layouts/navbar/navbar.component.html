@@ -27,6 +27,17 @@
             </span>
           </a>
         </li>
+        <a
+          class="nav-item"
+          routerLink="/categoria"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="collapseNavbar()"
+          class="nav-link"
+        >
+          <fa-icon icon="home" [fixedWidth]="true"></fa-icon>
+          <span>Menu</span>
+        </a>
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
         <li
           *ngSwitchCase="true"
@@ -70,6 +81,7 @@
             <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
           </ul>
         </li>
+
         <li
           *jhiHasAnyAuthority="'ROLE_ADMIN'"
           ngbDropdown

@@ -13,6 +13,7 @@
         data-cy="entityCreateButton"
         class="btn btn-primary jh-create-entity create-categoria"
         [routerLink]="['/categoria/new']"
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
       >
         <fa-icon icon="plus"></fa-icon>
         <span jhiTranslate="proyectoApp.categoria.home.createLabel">Crear nuevo Categoria</span>
