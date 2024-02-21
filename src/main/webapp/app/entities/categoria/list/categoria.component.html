@@ -60,12 +60,23 @@
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Vista</span>
               </a>
 
-              <a [routerLink]="['/categoria', categoria.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+              <a
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                [routerLink]="['/categoria', categoria.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
                 <fa-icon icon="pencil-alt"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
               </a>
 
-              <button type="submit" (click)="delete(categoria)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                type="submit"
+                (click)="delete(categoria)"
+                class="btn btn-danger btn-sm"
+                data-cy="entityDeleteButton"
+              >
                 <fa-icon icon="times"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
               </button>

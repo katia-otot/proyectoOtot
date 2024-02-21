@@ -16,6 +16,7 @@ import { ICategoria } from '../categoria.model';
 import { EntityArrayResponseType, CategoriaService } from '../service/categoria.service';
 import { CategoriaDeleteDialogComponent } from '../delete/categoria-delete-dialog.component';
 
+import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 @Component({
   standalone: true,
   selector: 'jhi-categoria',
@@ -30,6 +31,7 @@ import { CategoriaDeleteDialogComponent } from '../delete/categoria-delete-dialo
     FormatMediumDatetimePipe,
     FormatMediumDatePipe,
     ItemCountComponent,
+    HasAnyAuthorityDirective,
   ],
 })
 export class CategoriaComponent implements OnInit {
