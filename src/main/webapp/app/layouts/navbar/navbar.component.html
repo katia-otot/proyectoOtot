@@ -27,17 +27,19 @@
             </span>
           </a>
         </li>
-        <a
-          class="nav-item"
-          routerLink="/categoria"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="collapseNavbar()"
-          class="nav-link"
-        >
-          <fa-icon icon="home" [fixedWidth]="true"></fa-icon>
-          <span>Menu</span>
-        </a>
+
+        <li class="nav-item">
+          <a
+            routerLink="/categoria"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="collapseNavbar()"
+            class="nav-link"
+          >
+            <fa-icon icon="home" [fixedWidth]="true"></fa-icon>
+            <span>Menu</span>
+          </a>
+        </li>
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
         <li
           *ngSwitchCase="true"
