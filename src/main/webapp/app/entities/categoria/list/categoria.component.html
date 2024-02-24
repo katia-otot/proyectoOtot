@@ -29,63 +29,27 @@
     <span jhiTranslate="proyectoApp.categoria.home.notFound">Ningún Categorias encontrado</span>
   </div>
 
-  <div class="table-responsive table-entities" id="entities" *ngIf="categorias && categorias.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <!--  <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">ID</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>-->
-          <th scope="col" jhiSortBy="nombre">
-            <div class="d-flex">
-              <span jhiTranslate="proyectoApp.categoria.nombre">Nombre</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let categoria of categorias; trackBy: trackId" data-cy="entityTable">
-          <!--<td>
-            <a [routerLink]="['/categoria', categoria.id, 'view']">{{ categoria.id }}</a>
-          </td>-->
-          <td>{{ categoria.nombre }}</td>
-          <td class="text-end">
-            <div class="btn-group">
-              <a [routerLink]="['/categoria', categoria.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Vista</span>
-              </a>
-
+  <div ngbAccordion>
+    <div *ngFor="let categoria of categorias; trackBy: trackId" ngbAccordionItem [collapsed]="true">
+      <h2 ngbAccordionHeader>
+        <button (click)="clickCategoria(categoria)" ngbAccordionButton>{{ categoria.nombre }}</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            <div *ngFor="let producto of categoria.productos" class="table table-striped grid gap-0 column-gap-3">
               <a
-                *jhiHasAnyAuthority="'ROLE_ADMIN'"
-                [routerLink]="['/categoria', categoria.id, 'edit']"
-                class="btn btn-primary btn-sm"
-                data-cy="entityEditButton"
+                [routerLink]="['/producto', producto.id, 'view']"
+                class="linkCate shadow p-3 mb-5 bg-body-tertiary rounded d-block p-2 text-bg"
+                data-cy="entityDetailsButton"
               >
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                <span class="d-none d-md-inline">{{ producto.nombre }}</span>
               </a>
-
-              <button
-                *jhiHasAnyAuthority="'ROLE_ADMIN'"
-                type="submit"
-                (click)="delete(categoria)"
-                class="btn btn-danger btn-sm"
-                data-cy="entityDeleteButton"
-              >
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
-              </button>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </ng-template>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div *ngIf="categorias && categorias.length > 0">

@@ -16,11 +16,15 @@ import { ICategoria } from '../categoria.model';
 import { EntityArrayResponseType, CategoriaService } from '../service/categoria.service';
 import { CategoriaDeleteDialogComponent } from '../delete/categoria-delete-dialog.component';
 
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+
 import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
+
 @Component({
   standalone: true,
   selector: 'jhi-categoria',
   templateUrl: './categoria.component.html',
+  styleUrls: ['./categoria.css'],
   imports: [
     RouterModule,
     FormsModule,
@@ -32,6 +36,7 @@ import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directiv
     FormatMediumDatePipe,
     ItemCountComponent,
     HasAnyAuthorityDirective,
+    NgbAccordionModule,
   ],
 })
 export class CategoriaComponent implements OnInit {
@@ -152,4 +157,6 @@ export class CategoriaComponent implements OnInit {
       return [predicate + ',' + ascendingQueryParam];
     }
   }
+
+  public clickCategoria(c: ICategoria) {}
 }
