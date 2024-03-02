@@ -34,15 +34,30 @@
       <h2 ngbAccordionHeader>
         <button (click)="clickCategoria(categoria)" ngbAccordionButton>{{ categoria.nombre }}</button>
       </h2>
+      <a
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
+        [routerLink]="['/categoria', categoria.id, 'edit']"
+        class="btn btn-primary btn-sm"
+        data-cy="entityEditButton"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+      </a>
+      <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
+        type="submit"
+        (click)="delete(categoria)"
+        class="btn btn-danger btn-sm"
+        data-cy="entityDeleteButton"
+      >
+        <fa-icon icon="times"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+      </button>
       <div ngbAccordionCollapse>
         <div ngbAccordionBody>
           <ng-template>
             <div *ngFor="let producto of categoria.productos" class="table table-striped grid gap-0 column-gap-3">
-              <a
-                [routerLink]="['/producto', producto.id, 'view']"
-                class="linkCate shadow p-3 mb-5 bg-body-tertiary rounded d-block p-2 text-bg"
-                data-cy="entityDetailsButton"
-              >
+              <a [routerLink]="['/producto', producto.id, 'view']" class="linkCate btn btn-link" data-cy="entityDetailsButton">
                 <span class="d-none d-md-inline">{{ producto.nombre }}</span>
               </a>
             </div>
